@@ -2,14 +2,12 @@
 
 import { getIlovepdfTockenAction } from "@/actions";
 import { SignaruteRequested } from "@/type";
-import React from "react";
 
 const Ilovepdf = ({
   signaturesRequested,
 }: {
   signaturesRequested: SignaruteRequested[];
 }) => {
-  console.log("signaturesRequested", signaturesRequested);
   return (
     <div>
       <button
@@ -26,6 +24,7 @@ const Ilovepdf = ({
             <th className="text-left px-2">Sender</th>
             <th className="text-left px-2">Reciever</th>
             <th className="text-left px-2">Status</th>
+            <th className="text-left px-2">Created</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +37,7 @@ const Ilovepdf = ({
                 ))}
               </td>
               <td className="p-2">{item.status}</td>
+              <td className="p-2">{item.created}</td>
             </tr>
           ))}
         </tbody>
